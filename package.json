@@ -18,16 +18,24 @@
     "continous-integration"
   ],
   "author": "Andreas Lappe",
-  "contributors": [{
-    "name": "James Cryer",
-    "email": "chat@jamescryer.com",
-    "url": "http://www.jamescryer.com/"
-  }],
+  "contributors": [
+    {
+      "name": "James Cryer",
+      "email": "chat@jamescryer.com",
+      "url": "http://www.jamescryer.com/"
+    }
+  ],
   "devDependencies": {
     "grunt": "~0.4.0"
   },
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/alappe/grunt-phpmd/issues"
+  },
+  "dependencies": {
+    "cli-table2": "^0.2.0",
+    "color": "^0.11.3",
+    "table": "^3.7.8",
+    "xml2js": "^0.4.17"
   }
 }
