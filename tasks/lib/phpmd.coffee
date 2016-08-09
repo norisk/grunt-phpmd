@@ -71,6 +71,15 @@ exports.init = (grunt) ->
         warnings = 0
         infos = 0
 
+        # table data
+        table = new Table({
+          chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': ''
+                 , 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': ''
+                 , 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': ''
+                 , 'right': '' , 'right-mid': '' , 'middle': ' ' },
+          style: { 'padding-left': 0, 'padding-right': 0 }
+        });
+
         # parse xml
         parseString xml, (err, result) ->
 
@@ -78,15 +87,6 @@ exports.init = (grunt) ->
           if result.pmd['file'] && result.pmd['file'].length
             # parse all errored files
             for file in result.pmd['file']
-              # table data
-              table = new Table({
-                chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': ''
-                       , 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': ''
-                       , 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': ''
-                       , 'right': '' , 'right-mid': '' , 'middle': ' ' },
-                style: { 'padding-left': 0, 'padding-right': 0 }
-              });
-
               # get filename
               filename = file.$.name.replace(process.cwd(), "")
 
